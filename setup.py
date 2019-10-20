@@ -18,4 +18,7 @@ setup(
     ],
     long_description=long_description,
     long_description_content_type="text/markdown",
+    url="https://github.com/Tester86/passfactory",
+    author="Tester86",
+    author_email="tester86t@gmail.com",
 )
