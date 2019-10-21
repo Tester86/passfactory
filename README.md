@@ -1,6 +1,6 @@
 ## Installation
 
-Sorry, we still haven't uploaded this project to PIP
+pip install passfactory
 
 ## Usage
 
