@@ -5,10 +5,10 @@ Sorry, we still haven't uploaded this project to PIP
 ## Usage
 
 ```python
-import passgen as pg
+import passfactory as pf
 
 # Create the object
-root = pg.Password(2, "") # Security level: 2, forbidden chars: No forbidden chars
+root = pf.Password(2, "") # Security level: 2, forbidden chars: No forbidden chars
 
 password = root.generate() # Generating a random password according to parameters provided in constructor
 print(password) # Prints randomly generated password
