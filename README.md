@@ -5,7 +5,7 @@ pip install passfactory
 ## Usage
 
 ```python
-import passfactory as pf
+import src.passfactory as pf
 
 # Create the object
 root = pf.Password(2, "") # Security level: 2, forbidden chars: No forbidden chars

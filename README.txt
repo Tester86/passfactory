@@ -4,7 +4,7 @@ $pip install passfactory
 
 USAGE:
 
-import passfactory as pf
+import src.passfactory as pf
 
 root = pf.Password(2, "") # Security level: 2, Forbidden characters: no forbidden characters
 root2 = pf.Password(1, "#45f") # Security level: 1, Forbidden characters: "#", "4", "5" and "f"

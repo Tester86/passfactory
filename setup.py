@@ -1,7 +1,8 @@
-from distutils.core import setup
+from setuptools import *
+
 setup(
   name = 'passfactory',         # How you named your package folder (MyLib)
-  packages = ['src'],   # Chose the same as "name"
+  packages = find_packages(),
   version = '0.0.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Save password generator and tool box to operate them',   # Give a short description about your library
