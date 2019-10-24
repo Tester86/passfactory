@@ -79,3 +79,9 @@ class Password:
             if i not in other.password:
                 final_pass += i
         return final_pass
+    def __gt__(self, other):
+        return self.stats() > other.stats()
+    def __lt__(self, other):
+        return self.stats() < other.stats()
+    def __eq__(self, other):
+        return self.stats() == other.stats()
