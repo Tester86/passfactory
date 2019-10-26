@@ -85,3 +85,11 @@ class Password:
         return self.stats() < other.stats()
     def __eq__(self, other):
         return self.stats() == other.stats()
+    def __nq__(self, other):
+        return self.stats() != other.stats()
+    def __le__(self, other):
+        return self.stats() <= other.stats()
+    def __ge__(self, other):
+        return self.stats() >= other.stats()
+    def __contains__(self, string):
+        return string in self.password
