@@ -6,23 +6,32 @@ USAGE:
 
 import src.passfactory as pf
 
-root = pf.Password(2, "") # Security level: 2, Forbidden characters: no forbidden characters
-root2 = pf.Password(1, "#45f") # Security level: 1, Forbidden characters: "#", "4", "5" and "f"
+# Create the object
+root = pf.Password(2, "") # Security level: 2, forbidden chars: No forbidden chars
+other_root = pf.Password(2, "")
+password = root.generate() # Generating a random password according to parameters provided in constructor
+print(password) # Prints randomly generated password
 
-password = root.generate()
-password2 = root2.generate()
+root.copy() # Copy the password in paperclip ;)
 
-root.copy() # Copies the current password to paperclip
+root.save("passfile.txt") # Save the password (encoded in base64) in a file with
 
-root.save("mypasswords.txt") # Save the current password in a file
+alpha_chars, nums, special_chars = root.stats() # Returns the characters present in the alphabet, the numbers
+                                             # and the special characters in the last generated password
 
-chars, nums, special_chars = root.stats() # Get the number of characters, numbers and special characters present
-                                          # in the current password
+difference_between_passwords = root - other_root # Stores difference between 2 passwords (only different chars)
 
-def getSavestPass(): # Get the savest password (one which fulfills some given parameters for security such as length, variety of data types etc.)
+print("Password A is stronger than password B: " + str(root > other_root)) # Compares stats, not strings
+print("Password A is stronger than B or equally strong: " + root >= other_root) # Compares stats, not strings
+print("Password A is less strong than B or equally strong: " + root <= other_root) # Compares stats, not strings
+print("Both passwords are equally strong: " + root == other_root) # Compares stats, not strings
+print("Passwords A and B are not equally strong: " + root != other_root) # Compares stats, not strings
+
+password_contains_word = "word" in password # Returns boolean value
+
+def get_save_pass(): # Automatically generate passwords until a specially save one pops out
     global root
+    global password
     while not root.test():
-        new_pass = root.generate()
-    return new_pass
-
-remainant = root - root2 # Get the characters 2 or more passwords don't have in common
+        password = root.generate()
+    return password
